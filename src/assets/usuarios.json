@@ -1,0 +1,5 @@
+[
+    { "id": "1758227653255", "nombre": "Alice", "correo": "alice@example.com", "ciudad":"Medellin" },
+    { "id": "1758227730478", "nombre": "Bob", "correo": "bob@example.com", "ciudad": "Cali" },
+    { "id": "1758227768518", "nombre": "Charlie", "correo": "charlie@example.com", "ciudad":"Bogota" }
+  ]

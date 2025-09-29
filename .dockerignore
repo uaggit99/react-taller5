@@ -1,0 +1,13 @@
+# Dependencias locales
+node_modules
+dist
+# Control de versiones
+.git
+.gitignore
+
+# Configuraciones locales
+.vscode
+.env.local
+.env.*
+
+README.md
