@@ -114,7 +114,7 @@ export function FormEditUser({ id }) {
               Crear
             </button>
             <button onClick={editarUsuario} className={boton}>
-              Editar
+              Guardar
             </button>
           </form>
         </div>
