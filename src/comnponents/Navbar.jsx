@@ -6,7 +6,7 @@ export function Navbar() {
   return (
     <>
       <header>
-        <div className=" bg-gradient-to-r from-blue-400 to-purple-300 p-6 text-white  flex flex-row justify-start gap-5 m-3 border rounded-2xl">
+        <nav className=" bg-gradient-to-r from-blue-400 to-purple-300 p-6 text-white  flex flex-row justify-start gap-5 m-3 border rounded-2xl">
           <img src={logo} alt="logo react" />
 
           <Link to="/" className={estilo}>Login</Link>
@@ -14,7 +14,7 @@ export function Navbar() {
           <Link to="/user/edit/:id"  className={estilo}> Editar</Link>
         
           
-        </div>
+        </nav>
       </header>
     </>
   );

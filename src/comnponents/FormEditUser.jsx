@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 export function FormEditUser({ id }) {
   const navigate = useNavigate();
   const { users, setUsers } = useUsers();
+  
 
   const user = users.find((usuario) => usuario.id === id);
 
@@ -13,7 +14,7 @@ export function FormEditUser({ id }) {
   const [ciudad, setCiudad] = useState(user?.ciudad);
 
   if (!user) {
-    navigate("/");
+    navigate("/lista");
    
   }
 
@@ -38,6 +39,7 @@ export function FormEditUser({ id }) {
     };
     setUsers([...users, nuevoUsuario]);
     limpiar();
+    navigate("/lista");
   };
   const editarUsuario = (e) => {
     e.preventDefault();
@@ -52,6 +54,7 @@ export function FormEditUser({ id }) {
 
     setUsers([...filterUsuario, nuevoUsuario]);
     limpiar();
+    navigate("/lista");
   };
 
   const etiqueta = "text-blue-700 py-3 px-2 w-[70px]";
