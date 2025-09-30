@@ -12,6 +12,7 @@ export function Editar(){
             <FormEditUser id={id}/>
         </main>
         
+        
         </>
     )
 
