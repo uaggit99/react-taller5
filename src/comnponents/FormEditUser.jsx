@@ -4,14 +4,15 @@ import { useNavigate } from "react-router-dom";
 
 export function FormEditUser({ id }) {
   const navigate = useNavigate();
-  const { users, setUsers } = useUsers();
-  
+  const { users, setUsers } = useUsers(); 
 
   const user = users.find((usuario) => usuario.id === id);
 
   const [nombre, setNombre] = useState(user?.nombre);
   const [correo, setCorreo] = useState(user?.correo);
   const [ciudad, setCiudad] = useState(user?.ciudad);
+
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!user) {
     navigate("/lista");
@@ -30,6 +31,15 @@ export function FormEditUser({ id }) {
       alert("Por favor, completa todos los campos.");
       return;
     }
+    
+    const validar = regex.test(correo);
+
+    if(!validar){
+      window.alert(" !Formato correo No valido !");
+      return;
+
+    }
+    
 
     const nuevoUsuario = {
       id: Date.now().valueOf,
@@ -43,6 +53,12 @@ export function FormEditUser({ id }) {
   };
   const editarUsuario = (e) => {
     e.preventDefault();
+    
+    if(!regex.test(correo)){
+      window.alert(" !Formato corroe no valido");
+      return;
+
+    }
 
     const nuevoUsuario = {
       id: id,
@@ -84,6 +100,7 @@ export function FormEditUser({ id }) {
               placeholder="Ingrese su nombre"
               value={nombre}
               onChange={(event) => setNombre(event.target.value)}
+              required
             />
             <b></b>
             <br></br>
@@ -97,6 +114,7 @@ export function FormEditUser({ id }) {
               placeholder="Ingrese su Email"
               value={correo}
               onChange={(event) => setCorreo(event.target.value)}
+              required
             />
             <b></b>
             <br></br>
@@ -110,6 +128,7 @@ export function FormEditUser({ id }) {
               placeholder="Ingrese ciudad"
               value={ciudad}
               onChange={(event) => setCiudad(event.target.value)}
+              required
             />
             <b></b>
             <br></br>
